@@ -53,7 +53,7 @@ python -m pytest tests/
 ## Need Help?
 
 - Join our [Discord](https://discord.gg/videoai-manager)
-- Ask in [Discussions](https://github.com/softify-ai/videoai-manager/discussions)
+- Ask in [Discussions](https://github.com/Programaemprender/videoai-manager/discussions)
 - Email: support@softify.cl
 
 ## Code of Conduct

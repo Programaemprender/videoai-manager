@@ -52,7 +52,7 @@ docker run -d \
 
 ```bash
 # Clone the repository
-git clone https://github.com/softify-ai/videoai-manager.git
+git clone https://github.com/Programaemprender/videoai-manager.git
 cd videoai-manager
 
 # Install dependencies
@@ -139,7 +139,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 ## 💬 Community & Support
 
 - **Discord:** [Join our community](https://discord.gg/videoai-manager)
-- **Issues:** [GitHub Issues](https://github.com/softify-ai/videoai-manager/issues)
+- **Issues:** [GitHub Issues](https://github.com/Programaemprender/videoai-manager/issues)
 - **Email:** support@softify.cl
 - **Twitter:** [@softify_ai](https://twitter.com/softify_ai)
 
