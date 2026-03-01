@@ -1,5 +1,10 @@
 # VideoAI Manager
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![GitHub stars](https://img.shields.io/github/stars/Programaemprender/videoai-manager?style=social)](https://github.com/Programaemprender/videoai-manager/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/Programaemprender/videoai-manager)](https://github.com/Programaemprender/videoai-manager/issues)
+
 > AI-powered video library organizer for content creators
 
 **Never lose a clip again.** VideoAI Manager automatically categorizes your video clips using AI, detects recurring people with smart facial recognition, and makes your entire library searchable in seconds.
