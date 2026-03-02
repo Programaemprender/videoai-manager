@@ -121,5 +121,6 @@
 ---
 
 **Updated:** 2026-03-01  
-**Owner:** Alejandro Chung  
+**Owner:** Softify Team  
 **Status:** 🟢 On track for launch
+
