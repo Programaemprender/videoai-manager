@@ -82,14 +82,14 @@ python analyze_videos.py --folder /path/to/videos
 ## 🎬 Example Output
 
 ```
-Video: IMG_9759.MOV
+Video: sample_video_001.MOV
 Renamed: 2026-03-01_Ejercitando_Interior_Selfie_Normal_10s.mp4
 Categories:
   Action: Ejercitando
   Location: Interior
   Shot Type: Selfie
   Emotion: Normal
-  People Detected: 1 (Kuilen - appears in 3 videos)
+  People Detected: 1 (recurring person detected in 3 videos)
 ```
 
 ## 🛠️ Tech Stack
@@ -171,7 +171,7 @@ Want zero setup and premium features?
 
 Created by [Softify](https://softify.cl) - Makers of tools for modern creators.
 
-**Main Developer:** [Alejandro Chung](https://github.com/your-username) - "El Gladiador Estratega"
+**Developed by:** The Softify Team
 
 ## ⭐ Star Us!
 
@@ -180,3 +180,4 @@ If VideoAI Manager helps you stay organized, please star this repo! It helps oth
 ---
 
 **Made with ❤️ by creators, for creators.**
+
