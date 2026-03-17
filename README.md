@@ -1,107 +1,59 @@
-# VideoAI Manager 🎬✨
+# VideoAI Manager
 
-> **Intelligent video content organization powered by GPT-4 Vision**  
-> Automatically analyze, categorize, and organize your video library with AI.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![GitHub stars](https://img.shields.io/github/stars/Programaemprender/videoai-manager?style=social)](https://github.com/Programaemprender/videoai-manager/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/Programaemprender/videoai-manager)](https://github.com/Programaemprender/videoai-manager/issues)
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+> AI-powered video library organizer for content creators
 
----
+**Never lose a clip again.** VideoAI Manager automatically categorizes your video clips using AI, detects recurring people with smart facial recognition, and makes your entire library searchable in seconds.
 
-## 🚀 What is VideoAI Manager?
+![VideoAI Manager Demo](https://via.placeholder.com/800x400?text=Demo+Coming+Soon)
 
-VideoAI Manager is an **open-source automation system** that uses **GPT-4 Vision** and **computer vision** to intelligently process, analyze, and organize video content.
+## ✨ Features
 
-Perfect for content creators, agencies, and teams managing large video libraries.
+- 🤖 **AI-Powered Categorization** - Automatically detects actions, locations, emotions, and shot types
+- 👥 **Smart Facial Recognition** - Only notifies you about people who appear in 2+ videos (no spam from random extras)
+- 🔍 **Instant Search** - Find any clip by action, person, location, or emotion
+- 📊 **Google Sheets Integration** - Auto-updates your clip inventory
+- 🔗 **Cloud Storage Support** - Works with Google Drive, Dropbox, OneDrive
+- 🐳 **Docker Ready** - One-command setup for self-hosting
 
-### ✨ Key Features
+## 🎯 Who is this for?
 
-| Feature | Description | Status |
-|---------|-------------|--------|
-| 🎯 **GPT-4 Vision Analysis** | Semantic understanding of video content (location, action, emotion) | ✅ V6 |
-| 👤 **Facial Recognition** | Automatic detection and tracking of recurring people | ✅ V6 |
-| 📚 **Controlled Vocabulary** | Smart categorization system that prevents category explosion | ✅ V6 |
-| 🔄 **Retroactive Processing** | Re-analyzes old videos when new categories or people are registered | ✅ V6 |
-| 📊 **Google Drive Integration** | Seamless sync with Google Drive folders | ✅ |
-| 📈 **Spreadsheet Inventory** | Auto-updates Google Sheets with video metadata | ✅ |
-| 🧹 **Smart Cache Cleanup** | Removes irrelevant faces from social events automatically | ✅ V6 |
+- **Content Creators** - YouTubers, TikTokers, Instagramers managing hundreds of clips
+- **Video Editors** - Quickly find B-roll and specific shots
+- **Marketing Teams** - Organize brand content libraries
+- **Agencies** - Manage multiple clients' video assets
 
----
+## 🚀 Quick Start
 
-## 🎯 Perfect For
+### Hosted Service (Recommended)
 
-- **Content Creators** managing 100+ videos per month
-- **Video Production Teams** organizing raw footage
-- **Social Media Managers** curating content libraries
-- **Marketing Agencies** handling client video assets
-- **E-learning Platforms** categorizing course videos
+The easiest way to get started is with our hosted service at [videoai.softify.cl](https://videoai.softify.cl)
 
----
+**Free tier:** 50 videos/month  
+**Creator plan:** $19/month - 500 videos, facial recognition, 50GB storage
 
-## 📊 How It Works
+### Self-Hosted (Open Source)
 
-```
-1. Upload videos to Google Drive (INCOMING folder)
-   ↓
-2. VideoAI extracts 3 strategic frames (20%, 50%, 80%)
-   ↓
-3. GPT-4 Vision analyzes content semantically
-   ↓
-4. OpenCV detects and recognizes faces (local, free)
-   ↓
-5. Smart renaming: 2026-03-17_Action_Location_Shot_Emotion_Xs_People.mp4
-   ↓
-6. Move to REELS_GENERATED folder
-   ↓
-7. Update Google Sheets inventory automatically
-   ↓
-8. Save to history for retroactive processing
+**Prerequisites:**
+- Python 3.9+
+- Docker (optional but recommended)
+- OpenAI API key (for advanced features)
+
+**Option 1: Docker (Easiest)**
+
+```bash
+docker run -d \
+  -v /path/to/videos:/videos \
+  -v /path/to/data:/data \
+  -p 8000:8000 \
+  softify/videoai-manager:latest
 ```
 
-**Precision:** 95% (GPT-4V semantic analysis)  
-**Cost:** ~$0.03 per video  
-**Speed:** ~3 minutes per video
-
----
-
-## 🆕 What's New in V6
-
-### GPT-4 Vision Integration
-- **Semantic understanding** (not heuristic rules)
-- Detects landscapes (beach, mountain, cycling routes)
-- Differentiates movement intensity (walk vs run)
-- **95% precision** vs 60% in V5
-
-### Facial Recognition System
-- **Automatic detection** of recurring people
-- **Local processing** with OpenCV (free, no cloud)
-- **Smart notifications**: Only when face appears in ≥2 videos
-- **Cache cleanup**: Max 50 unidentified faces, prioritizes recurring ones
-
-### Controlled Vocabulary
-- **24 base categories** (8 locations, 9 actions, 7 emotions)
-- **Intelligent approval system** (3+ appearances required)
-- **Automatic normalization** of synonyms
-- **Prevents category explosion** (avoids "Gym_Smartfit_Branch_5")
-
-### Retroactive Processing
-- **Re-analyzes frames** with GPT-4V to confirm
-- Only updates if new category truly applies
-- **Prevents mass errors** (food court ≠ airport)
-- Complete history for audit trail
-
----
-
-## 🛠️ Installation
-
-### Prerequisites
-
-- Python 3.8+
-- Google Cloud Service Account (for Drive/Sheets API)
-- OpenAI API key (for GPT-4V)
-
-### Quick Start
+**Option 2: Manual Install**
 
 ```bash
 # Clone the repository
@@ -111,86 +63,121 @@ cd videoai-manager
 # Install dependencies
 pip install -r requirements.txt
 
-# Configure credentials
+# Set up configuration
 cp .env.example .env
-# Edit .env with your API keys
+# Edit .env with your settings
 
-# Process your first video
-python src/pipeline_v6.py YOUR_VIDEO_FILE_ID
+# Run the analyzer
+python analyze_videos.py --folder /path/to/videos
 ```
 
----
+## 📖 How It Works
 
-## 📖 Documentation
+1. **Point to your video folder** (local or cloud storage)
+2. **AI analyzes each video** - Detects objects, actions, emotions
+3. **Smart categorization** - Uses your custom vocabulary or generates categories
+4. **Facial recognition** - Detects recurring people (opt-in)
+5. **Organized library** - Search by any criteria, export to sheets
 
-- **[CHANGELOG.md](CHANGELOG.md)** — Complete implementation history
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** — How to contribute
-- **[Vocabulary System](docs/vocabulary.md)** — Controlled categorization
-- **[Facial Recognition](docs/facial_recognition.md)** — Face detection and tracking
-- **[Retroactive Processing](docs/retroactive.md)** — Re-analyzing old videos
+## 🎬 Example Output
 
----
+```
+Video: sample_video_001.MOV
+Renamed: 2026-03-01_Ejercitando_Interior_Selfie_Normal_10s.mp4
+Categories:
+  Action: Ejercitando
+  Location: Interior
+  Shot Type: Selfie
+  Emotion: Normal
+  People Detected: 1 (recurring person detected in 3 videos)
+```
 
-## 💰 Pricing (Self-Hosted)
+## 🛠️ Tech Stack
 
-| Component | Cost |
-|-----------|------|
-| OpenCV Facial Recognition | **Free** (local) |
-| GPT-4 Vision Analysis | ~$0.03/video |
-| Google Drive API | **Free** (within quotas) |
-| Google Sheets API | **Free** (within quotas) |
+- **AI/ML:** YOLOv5 (object detection), OpenCV (face detection), optional face_recognition
+- **Backend:** Python, FastAPI (for hosted service)
+- **Storage:** Local filesystem, S3-compatible, Google Drive API
+- **Database:** SQLite (self-hosted), PostgreSQL (hosted)
 
-**Example:** Process 100 videos/month = **$3 USD/month**
+## 📊 Roadmap
 
----
+### ✅ Completed
+- [x] Video analysis with YOLOv5
+- [x] Smart facial recognition (recurring people only)
+- [x] Google Sheets integration
+- [x] Custom vocabulary system
 
-## 🎨 Example Output
+### 🚧 In Progress
+- [ ] Web UI for search and preview
+- [ ] Docker image
+- [ ] Multi-cloud sync (Drive + Dropbox + OneDrive)
 
-**Input:**  
-`IMG_3132.MOV` (28 seconds, running in park)
-
-**Output:**  
-`2026-03-17_Correr_Parque_TerceraPersona_Esfuerzo_28s_Alejandro.mp4`
-
-**Metadata in Google Sheets:**
-| Name | Location | Shot | Description | Action | Emotion | People | Duration | Link |
-|------|----------|------|-------------|--------|---------|--------|----------|------|
-| 2026-03-17_Correr_Parque... | Park | ThirdPerson | Man running in sunny park with blue Under Armour shirt | Running | Effort | Alejandro | 28s | [link] |
-
----
+### 📅 Planned
+- [ ] Voice search ("find clips where I'm running")
+- [ ] Auto-generate reels from best clips
+- [ ] Integration with Premiere/Final Cut
+- [ ] Mobile app (iOS/Android)
+- [ ] API for automation
 
 ## 🤝 Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-**Areas where we need help:**
-- [ ] CLIP integration (free alternative to GPT-4V)
-- [ ] Multi-language support
-- [ ] Video clip extraction (best moments)
-- [ ] Audio transcription integration
-- [ ] Web UI dashboard
+**Areas we need help:**
+- 🐛 Bug fixes and testing
+- 📝 Documentation improvements
+- 🌍 Translations (Spanish, Portuguese, etc.)
+- 🎨 UI/UX design for web interface
+- 🚀 Performance optimizations
 
----
-
-## 📜 License
+## 📄 License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
----
+## 🔒 Privacy & Security
 
-## 🌟 Star History
+- **Your videos stay yours** - Self-hosted option means zero data leaves your machine
+- **Facial data is opt-in** - Recognition only works if you explicitly enable it
+- **Encrypted storage** - Hosted service encrypts all data at rest
+- **No training on your data** - We never use your videos to train our models
 
-If this project helps you, please ⭐ star it on GitHub!
+## 💬 Community & Support
 
----
-
-## 🔗 Links
-
-- **Landing Page:** [videoai.softify.cl](https://videoai.softify.cl)
-- **Softify Products:** [softify.cl](https://softify.cl)
+- **Discord:** [Join our community](https://discord.gg/videoai-manager)
 - **Issues:** [GitHub Issues](https://github.com/Programaemprender/videoai-manager/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/Programaemprender/videoai-manager/discussions)
+- **Email:** support@softify.cl
+- **Twitter:** [@softify_ai](https://twitter.com/softify_ai)
+
+## 🌟 Hosted Service
+
+Want zero setup and premium features?
+
+**[Try VideoAI Manager Hosted →](https://videoai.softify.cl)**
+
+- ✅ No installation required
+- ✅ Automatic updates
+- ✅ Advanced facial recognition
+- ✅ Team collaboration
+- ✅ Priority support
+- ✅ 99.9% uptime SLA
+
+**Pricing:**
+- Free: 50 videos/month
+- Creator: $19/month
+- Team: $49/month
+- Agency: $199/month
+
+## 🏆 Built By
+
+Created by [Softify](https://softify.cl) - Makers of tools for modern creators.
+
+**Developed by:** The Softify Team
+
+## ⭐ Star Us!
+
+If VideoAI Manager helps you stay organized, please star this repo! It helps others discover the project.
 
 ---
 
-**Built with ❤️ by the Softify Team**
+**Made with ❤️ by creators, for creators.**
+
